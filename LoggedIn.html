@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+   <link rel='stylesheet' type='text/css' href='/resources/tutorial/css/example.css'>
+    <title>Lol</title>
+  </head>
+<script>
+var uiConfig = {
+callbacks: {
+  signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+    // User successfully signed in.
+    // Return type determines whether we continue the redirect automatically
+    // or whether we leave that to developer to handle.
+    return true;
+  },
+  uiShown: function() {
+    // The widget is rendered.
+    // Hide the loader.
+    document.getElementById('loader').style.display = 'none';
+  }
+}, signInFlow: 'popup',
+  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+ui.start('#firebaseui-auth-container', uiConfig);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCxw9T26D7pEhaTn4c9T388kPIIC8_UatI",
+    authDomain: "alumno-alumno-f2784.firebaseapp.com",
+    databaseURL: "https://alumno-alumno-f2784.firebaseio.com",
+    projectId: "alumno-alumno-f2784",
+    storageBucket: "alumno-alumno-f2784.appspot.com",
+    messagingSenderId: "856053568480"
+  };
+  ui.start('#firebaseui-auth-container',{
+    signInOptions: [
+      firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      requireDisplayName: true
+    ],
+    customParameters:{
+      prompt; 'select_account'
+    }
+  })
+
+  firebase.initializeApp(config);
+</script>
+  <body>
+    <h1>Welcome</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    <script>
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+firebase.auth()onAuthStateChange(function(user)){
+  if(user){
+    documment.body.innerHTML=<h1> "Congrats" '+user.displayname+', "you are done"</h1>;
+  }else{
+    console.log("no user signed in");
+  }
+}}
+</script>
+<div>
+<a href="Media/ITOS.png"
+</div>
+  </body>
+</html>
