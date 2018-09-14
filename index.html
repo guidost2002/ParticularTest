@@ -1,59 +1,42 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-   <link rel='stylesheet' type='text/css' href='index.css'>
-    <title>Sample FirebaseUI App</title>
-<script>
-function Onclick(){
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-}
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
 
-</script>
-<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCxw9T26D7pEhaTn4c9T388kPIIC8_UatI",
-    authDomain: "alumno-alumno-f2784.firebaseapp.com",
-    databaseURL: "https://alumno-alumno-f2784.firebaseio.com",
-    projectId: "alumno-alumno-f2784",
-    storageBucket: "alumno-alumno-f2784.appspot.com",
-    messagingSenderId: "856053568480"
-  };
-  firebase.initializeApp(config);
-</script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.2.0/firebaseui.css" />
-    <script type="text/javascript">
-      // FirebaseUI config.
-      var uiConfig = {
-        signInSuccessUrl: 'Alpha2.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ],
-        // Terms of service url.
-        tosUrl: '<your-tos-url>',
-        // Privacy policy url.
-        privacyPolicyUrl: '<your-privacy-policy-url>'
-      };
+    <button onclick="login()">Login to Account</button>
+  </div>
 
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
-  </head>
-  <body>
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-         Your app may use that space for branding, controls and other customizations.-->
-    <h1></h1>
-    <div id="firebaseui-auth-container"></div>
+<div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Bienvenido xd You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
 
-    <button type="button" name="button" id=botoncito>  LoL </button>
-  </body>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCO5WuBOWX_Asz1dLu-KxZ-TKiZ7dbpOwA",
+      authDomain: "prueba-498d1.firebaseapp.com",
+      databaseURL: "https://prueba-498d1.firebaseio.com",
+      projectId: "prueba-498d1",
+      storageBucket: "prueba-498d1.appspot.com",
+      messagingSenderId: "841313997913"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
 </html>
