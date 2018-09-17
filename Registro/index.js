@@ -9,6 +9,7 @@ function register(){
   var userName = document.getElementById("nombre_field").value;
   var userSurname = document.getElementById("apellido_field").value;
   var userPhone = document.getElementById("number_field").value;
+  var userUID= Firebase.auth().createCustomToken(UID)
 
       //writeUserData(userName,userPass,userEmail,userPhone);
 
@@ -17,6 +18,7 @@ function register(){
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(function(result)
 {
   writeUserData(userEmail,userSurname,userEmail,userPhone);
+  location = "../Login/login.html";
 }).catch(function(error) {
 
 //  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
@@ -31,12 +33,14 @@ function register(){
 
 }
 function traer(){
-  var userId = firebase.auth().currentUser.uid;
+ var userId = firebase.auth().currentUser.uid;
 return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
   var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
   // ...
 });
 window.alert(username);
+
+
 }
 
 function writeUserData(name,surname, email, phone) {
