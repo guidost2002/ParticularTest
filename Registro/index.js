@@ -10,11 +10,14 @@ function register(){
   var userSurname = document.getElementById("apellido_field").value;
   var userPhone = document.getElementById("number_field").value;
 
-      writeUserData(userName,userPass,userEmail,userPhone);
+      //writeUserData(userName,userPass,userEmail,userPhone);
 
 
 
-  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(function(result)
+{
+  writeUserData(userEmail,userSurname,userEmail,userPhone);
+}).catch(function(error) {
 
 //  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
