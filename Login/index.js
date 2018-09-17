@@ -28,7 +28,19 @@ function login(){
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
 
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
+    var userId=firebase.auth().currentUser.uid;
+    return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot)
+    {
+      var nombree = (snapshot.val() && snapshot.val().name) || 'Anonymous';
+      var apellidoo = (snapshot.val() && snapshot.val().surname) || 'Anonymous';
+      alert("Bienvenido " + nombree + apellidoo);
+    });
+
+
+  //  var apellidoo=firebase.database().ref('/usuarios/' + userId).child("surname").value;
+
+  }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
