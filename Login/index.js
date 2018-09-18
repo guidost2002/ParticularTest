@@ -34,7 +34,7 @@ function login(){
     {
       var nombree = (snapshot.val() && snapshot.val().name) || 'Anonymous';
       var apellidoo = (snapshot.val() && snapshot.val().surname) || 'Anonymous';
-      alert("Bienvenido " + nombree + apellidoo);
+      alert("Bienvenido " + nombree +""+ apellidoo);
     });
 
 
