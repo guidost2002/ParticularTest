@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Menú</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="estilolog.css" />
+    <link rel="stylesheet" href="hovermaster/css/hover-min.css">
   </head>
   <body>
     <center> <a href="\Registro\Register.html"> <input type="button" name="" value="Registro"></input> </a></center>
     <center> <a href="\Login\login.html"> <input type="button" name="" value="Login"> </a></center>
+    <center><div id="info">
+      lol
+    </div>
+    <button type="button" onclick="cambiar()" name="button">Lol</button>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+
+      var config = {
+        apiKey: "AIzaSyCO5WuBOWX_Asz1dLu-KxZ-TKiZ7dbpOwA",
+        authDomain: "prueba-498d1.firebaseapp.com",
+        databaseURL: "https://prueba-498d1.firebaseio.com",
+        projectId: "prueba-498d1",
+        storageBucket: "prueba-498d1.appspot.com",
+        messagingSenderId: "841313997913"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script src="index.js"></script>
   </body>
 </html>

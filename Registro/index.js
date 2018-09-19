@@ -5,7 +5,7 @@ function register(){
 
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-  var userRpass = document.getElementById("rpassword-field").value;
+  var userRpass = document.getElementById("rpassword_field").value;
   var userName = document.getElementById("nombre_field").value;
   var userSurname = document.getElementById("apellido_field").value;
   var userPhone = document.getElementById("number_field").value;
@@ -17,7 +17,7 @@ if (userPass == userRpass) {
 {
 
   writeUserData(userName,userSurname,userEmail,userPhone);
-  link("../Login/login.html");
+
   //location = "../Login/login.html";
 }).catch(function(error) {
 
@@ -59,6 +59,7 @@ var userId = firebase.auth().currentUser.uid;
       // The write failed...
     } else {
       window.alert("Data saved successfully");
+      window.location.replace("../Login/login.html");
       // Data saved successfully!
     }
   });
