@@ -17,7 +17,8 @@ if (userPass == userRpass) {
 {
 
   writeUserData(userName,userSurname,userEmail,userPhone);
-  link("../Login/login.html");
+
+  link("../index.html");
   //location = "../Login/login.html";
 }).catch(function(error) {
 
