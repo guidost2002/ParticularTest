@@ -2,8 +2,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-  //  document.getElementById("user_div").style.display = "block";
-  //  document.getElementById("login_div").style.display = "none";
+   document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
@@ -38,8 +38,9 @@ function login(){
       var firstName = snapshot.child("name").val(); // "Ada"
       var lastName = snapshot.child("surname").val(); // "Lovelace"
       var age = snapshot.child("phone").val(); // null
-      alert(firstName+" "+lastName);
+      alert("Bienvenido: "+firstName+" "+lastName);
     });
+    link("../index.html");
 
 
   //  var apellidoo=firebase.database().ref('/usuarios/' + userId).child("surname").value;
