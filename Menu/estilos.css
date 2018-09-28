@@ -1,4 +1,4 @@
-*{margin:0; padding:0;}
+*{margin:0; padding:0; }
 
 body{
   background: #848484;
@@ -8,6 +8,13 @@ header{
   overflow: hidden;
   background: #252932;
   margin-bottom: 20px;
+}
+a#alogout{
+  display: hidden;
+}
+.aregistro{
+  position: relative;
+  right:0px;
 }
 
 .logotipo{
@@ -26,12 +33,12 @@ overflow: hidden
 header .logo {
   color: #f2f2f2;
   font-size: 50px;
-  line-height:150px;
+  line-height:100px;
   float: left;
 }
 header nav{
   float: right;
-  line-height: 150px;
+  line-height: 100px;
 }
 
 header nav a{
@@ -47,7 +54,7 @@ header nav a{
   transition:all 500ms ease;
 }
 .FtPendejos{
-  margin-bottom: 300px;
+  margin-bottom:0px;
   float: right;
 }
 
