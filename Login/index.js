@@ -2,8 +2,8 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
+  //  document.getElementById("user_div").style.display = "block";
+  //  document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
@@ -30,7 +30,7 @@ function login(){
 
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function(){
     var userId=firebase.auth().currentUser.uid;
-    return firebase.database().ref('/usuarios/' + userId).onAuthStateChanged9o0('value').then(function(snapshot)
+    return firebase.database().ref('/usuarios/' + userId).onAuthStateChanged('value').then(function(snapshot)
     {
       var nombree = (snapshot.val() && snapshot.val().name) || 'Anonymous';
       var apellidoo = (snapshot.val() && snapshot.val().surname) || 'Anonymous';
