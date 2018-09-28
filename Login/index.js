@@ -40,7 +40,7 @@ function login(){
       var age = snapshot.child("phone").val(); // null
       alert("Bienvenido: "+firstName+" "+lastName);
     });
-    link("../index.html");
+    window.location.href = '../index.html';
 
 
   //  var apellidoo=firebase.database().ref('/usuarios/' + userId).child("surname").value;
