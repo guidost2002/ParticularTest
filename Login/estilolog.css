@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background:#848484;
   padding: 0%;
   margin: 0%;
   font-family: 'Nunito', sans-serif;
@@ -32,6 +32,10 @@ button {
   padding: 20px;
   display: none;
 
+}
+.datos{
+  color: #f2f2f2;
+  font-size: 26px;
 }
 
 .login-div input {
