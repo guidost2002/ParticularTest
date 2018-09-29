@@ -5,7 +5,7 @@ function register(){
 
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-  var userRpass = document.getElementById("rpassword-field").value;
+  var userRpass = document.getElementById("rpassword_field").value;
   var userName = document.getElementById("nombre_field").value;
   var userSurname = document.getElementById("apellido_field").value;
   var userPhone = document.getElementById("number_field").value;
@@ -18,7 +18,7 @@ if (userPass == userRpass) {
 
   writeUserData(userName,userSurname,userEmail,userPhone);
 
-  link("../index.html");
+  window.location.href = '../index.html';
   //location = "../Login/login.html";
 }).catch(function(error) {
 
