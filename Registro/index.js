@@ -18,6 +18,10 @@ if (userPass == userRpass) {
 
   writeUserData(userName,userSurname,userEmail,userPhone);
 
+<<<<<<< HEAD
+=======
+  window.location.href = '../index.html';
+>>>>>>> master
   //location = "../Login/login.html";
 }).catch(function(error) {
 
