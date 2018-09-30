@@ -17,11 +17,6 @@ if (userPass == userRpass) {
 {
 
   writeUserData(userName,userSurname,userEmail,userPhone);
-
-<<<<<<< HEAD
-=======
-  window.location.href = '../index.html';
->>>>>>> master
   //location = "../Login/login.html";
 }).catch(function(error) {
 
@@ -63,7 +58,9 @@ var userId = firebase.auth().currentUser.uid;
       // The write failed...
     } else {
       window.alert("Data saved successfully");
-      window.location.replace("../Login/login.html");
+      window.location.href = '../index.html';
+
+      // window.location.replace("../Login/login.html");
       // Data saved successfully!
     }
   });

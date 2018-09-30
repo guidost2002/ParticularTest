@@ -4,10 +4,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 //    document.getElementById("user_div").style.display = "block";
   //  document.getElementById("login_div").style.display = "none";
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 
     var user = firebase.auth().currentUser;
 
@@ -56,7 +53,7 @@ function login(){
       var age = snapshot.child("phone").val(); // null
       alert("Bienvenido: "+firstName+" "+lastName);
 
->>>>>>> master
+
     });
     window.location.href = '../index.html';
 

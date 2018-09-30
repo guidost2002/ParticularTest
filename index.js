@@ -1,21 +1,5 @@
-<<<<<<< HEAD
-function cambiar(){
-  firebase.auth().onAuthStateChanged(function(user) {
-  		    if (user) {
-  		    console.log("user is signed in")
-          var name, email;
 
-          if (user != null) {
-            name = user.displayName;
-            email = user.email;
-          console.log(name+email);
-          }
-          }
-          else {
-  		    console.log("no user is signed in")
-  		    }
-  	          });
-=======
+
 var alogout =document.getElementById('alogout');
 var alogin =document.getElementsByClassName('alogin');
 var aregistro =document.getElementsByClassName('aregistro');
@@ -49,6 +33,7 @@ console.log("No hay");
     // No user is signed in.
   }
 });
+
 function logout(){
   firebase.auth().signOut()
     .then(function() {
@@ -59,5 +44,5 @@ window.location.href= 'index.html';
       // An error happened
     });
 
->>>>>>> master
+
 }
