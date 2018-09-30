@@ -22,9 +22,10 @@ var userId=firebase.auth().currentUser.uid;
     });
 
   }
-    
+
     // User is signed in.
    else {
+console.log("No hay");
      document.getElementById("user_div").style.display = "none";
      document.getElementById("login_div").style.display = "block";
     // No user is signed in.
