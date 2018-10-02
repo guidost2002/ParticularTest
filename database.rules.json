@@ -1,0 +1,21 @@
+{
+  "rules": {
+    "usuarios": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "materias": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+    }
+  }
+}
+
+/*{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}*/
