@@ -19,18 +19,34 @@ var about = document.getElementById('desc').value;
     }
   });
 }
+/*function traer(){
+  var xd = agarrar();
+  console.log(xd);
+}*/
+function usarId(idd){
+  var ref = firebase.database().ref('materias/'+idd);
+  ref.once("value")
+    .then(function(snapshot) {
+      var name = snapshot.child("name").val(); // {first:"Ada",last:"Lovelace"}
+      var firstName = snapshot.child("name").val(); // "Ada"
+      var lastName = snapshot.child("surname").val(); // "Lovelace"
+      var age = snapshot.child("phone").val(); // null
+      console.log("Bienvenido: "+firstName+" "+lastName);
+    });
+}
+
   function traer(){
  var materia = "lengua";
   var ref = firebase.database().ref('materias/' +materia);
-    ref.once("value")
-    .then(function(snapshot) {
-      snapshot.forEach(function(childSnapshot){
-        var key = childSnapshot.key;
-        var childData = childSnapshot.val();
-        console.log(key);
-      });
-
+  ref.once('value',function (snap){
+    snap.forEach(function(item){
+      var itemVal = item.val();
+      var arrayy;
+      arrayy.toArray(snap.val());
+    });
+    for (i=0; i<arrayy.length; i++)
+    {
+      usarId(arrayy[i]);
+    }
   });
-
-
 }
