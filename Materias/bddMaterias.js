@@ -1,30 +1,8 @@
 
 
 function writeUserinSubject() {
-
-var materia = "lengua";
-var userId = firebase.auth().currentUser.uid;
-var about = document.getElementById('desc').value;
-
-  firebase.database().ref('materias/' +materia+'/'+userId).set({
-//    uid:userId,
-    description:about
-  }, function(error) {
-    if (error) {
-      window.alert("The write failed... ");
-      // The write failed...
-    } else {
-      window.alert("Data saved successfully");
-
-    }
-  });
-}
-/*function traer(){
-  var xd = agarrar();
-  console.log(xd);
-}*/
-function usarId(idd){
-  var ref = firebase.database().ref('materias/'+idd);
+  var userId = firebase.auth().currentUser.uid;
+  var ref = firebase.database().ref('usuarios/'+userId);
   ref.once("value")
     .then(function(snapshot) {
       var name = snapshot.child("name").val(); // {first:"Ada",last:"Lovelace"}
@@ -32,22 +10,39 @@ function usarId(idd){
       var lastName = snapshot.child("surname").val(); // "Lovelace"
       var age = snapshot.child("phone").val(); // null
       console.log("Bienvenido: "+firstName+" "+lastName);
+      var materia = "lengua";
+      var about = document.getElementById('desc').value;
+
+      firebase.database().ref('materias/' +materia+'/'+userId).set({
+        //    uid:userId,
+        description:about,
+        firstName:firstName,
+        lastName:lastName
+      }, function(error) {
+        if (error) {
+          window.alert("The write failed... ");
+          // The write failed...
+        } else {
+          window.alert("Data saved successfully");
+
+        }
+      });
     });
 }
 
-    function traer(){
-      let arr= [];
+
+
+function traer(){
    var materia = "lengua";
    var ref = firebase.database().ref('materias/' +materia);
+   const list = document.getElementById('posts');
+   list.innerHTML = '';
    ref.on("child_added", function(snapshot){
-     snapshot.forEach(function(childSnapshot) {
-        var item = childSnapshot.key;
-      //  item.key = childSnapshot.key;
-
-        arr.push(item);
-    });
-    console.log(arr);
-    return arr;
-
-   });
+     var item = snapshot.key;
+     var Desc = snapshot.val().description;
+     var first = snapshot.val().firstName;
+     var last = snapshot.val().lastName;
+     console.log(Desc, first,last);
+     list.innerHTML += `<li>Descripción: ${Desc}<br>Nombre: ${first}<br>Apellido: ${last}<br></li>`;
+ });
 }
