@@ -36,27 +36,18 @@ function usarId(idd){
 }
 
     function traer(){
-      var arr= [];
+      let arr= [];
    var materia = "lengua";
    var ref = firebase.database().ref('materias/' +materia);
-   ref.on('value',function(snapshot){
+   ref.on("child_added", function(snapshot){
+     snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.key;
+      //  item.key = childSnapshot.key;
 
-     arr = snapshotToArray(snapshot);
-     for (var i = 0; i < arr.length; i++) {
-       console.log(arr[i]);
-     }
-    
-  });
-}
-
-function snapshotToArray(snapshot) {
-    let returnArr = [];
-
-    snapshot.forEach(childSnapshot => {
-        let item = childSnapshot.val();
-        //item.key = childSnapshot.key;
-        returnArr.push(item);
+        arr.push(item);
     });
+    console.log(arr);
+    return arr;
 
-    return returnArr.description;
-};
+   });
+}
