@@ -35,18 +35,28 @@ function usarId(idd){
     });
 }
 
-  function traer(){
- var materia = "lengua";
-  var ref = firebase.database().ref('materias/' +materia);
-  ref.once('value',function (snap){
-    snap.forEach(function(item){
-      var itemVal = item.val();
-      var arrayy;
-      arrayy.toArray(snap.val());
-    });
-    for (i=0; i<arrayy.length; i++)
-    {
-      usarId(arrayy[i]);
-    }
+    function traer(){
+      var arr= [];
+   var materia = "lengua";
+   var ref = firebase.database().ref('materias/' +materia);
+   ref.on('value',function(snapshot){
+
+     arr = snapshotToArray(snapshot);
+     for (var i = 0; i < arr.length; i++) {
+       console.log(arr[i]);
+     }
+    
   });
 }
+
+function snapshotToArray(snapshot) {
+    let returnArr = [];
+
+    snapshot.forEach(childSnapshot => {
+        let item = childSnapshot.val();
+        //item.key = childSnapshot.key;
+        returnArr.push(item);
+    });
+
+    return returnArr.description;
+};
